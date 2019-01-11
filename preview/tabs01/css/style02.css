@@ -1,0 +1,17 @@
+/* body {background:#f30;} */
+* { margin:0; padding:0; border:0}
+body {padding:10px; margin-top:100px;}
+#wrapper {width:522px; margin:0 auto; text-align:center;}
+	li {float:left; list-style:none; margin-left:10px; overflow:hidden; width:123px; height:40px;}
+	li.first {margin-left:0;}
+	li a { display:block; width:123px;}
+	li a img {display:block;}
+	
+#nav {width:522px; height:40px; margin:0 auto 10px auto; }	
+#image { width:522px; height:400px; margin:10px auto 0 auto;}
+
+
+.spring { background:url(../images/spring.jpg) no-repeat;}
+.summer { background:url(../images/summer.jpg) no-repeat;}
+.fall { background:url(../images/fall.jpg) no-repeat;}
+.winter { background:url(../images/winter.jpg) no-repeat;}

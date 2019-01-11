@@ -1,0 +1,9 @@
+#wrap {width:487px; margin:0 auto}
+#wrap ul { margin-top:140px;}
+#wrap ul:after {content:''; display:block; clear:both}
+#wrap ul li {float:left; overflow:hidden; height:25px; margin-right:6px;}
+#wrap ul li:last-child {margin-right:0;}
+#wrap ul li img {margin-top:0px;}
+#wrap ul li .on img {margin-top:-25px;}
+#content {position:relative; width:487px; height:323px;}
+#content div { position:absolute; left:0; top:0; display:none; width:455px; height:291px; margin-top:10px; background:#55aaea; padding:16px;}
