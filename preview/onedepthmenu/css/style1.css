@@ -1,5 +1,0 @@
-#nav {width:800px; margin:100px auto 0 auto;}
-#nav ul:after {content:''; display:block; clear:both}
-#nav ul li {float:left; position:relative; width:200px;}
-#nav ul li a {position:relative; display:block; width:200px; height:30px; line-height:30px; background:#cccccc; text-align:center; color:#333333;}
-#nav ul li.on > a {font-weight:bold; text-decoration:underline; background:#33ccff; color:#fff;}
