@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+    jQuery(document).ready(function(){
+        $('.tabSet').each(function(){
+            var topDiv = $(this);
+            var anchors = topDiv.find('ul.tabs a');
+            var panelDivs = topDiv.find('div.panel');
+            var lastAnchor;
+            var lastPanel;
+            anchors.show();
+            lastAnchor = anchors.filter('.on');
+            lastPanel = $(lastAnchor.attr('href'));	//보여질놈이 담겨있쥐
+            panelDivs.hide();
+            lastPanel.show();
+
+            anchors.click(function(event){
+                event.preventDefault();	 /* 하이퍼링크 눌르면 꿈찔거리는거 방지 */
+                // return false; 랑 같음
+                var currentAnchor = $(this);
+                var currentPanel = $(currentAnchor.attr('href'));
+                lastAnchor.removeClass('on');
+                currentAnchor.addClass('on');
+                lastPanel.hide();
+                currentPanel.show();
+                lastAnchor = currentAnchor;
+                lastPanel = currentPanel;
+            });
+        });
+    });
+    </script>
+    <style>
+    * {margin:0; padding:0; list-style:none;}
+    body {padding:1.5em 2em; line-height:1.4; font-family:Arial, Helveetica, sans-serif;}
+    .all {width:610px;}
+    .tabSet {padding:3px 3px 3em 3px; border:2px solid #666666; margin:0 0 20px; border-radius:4px;}
+    ul {overflow:hidden; padding:12px 12px 0; background:#000000 url(/images/tabcontent/bg1.png) repeat-x 0 0 ; border-radius:4px;}
+    ul li { float:left; padding:0 4px 0 0 ;}
+    ul li a { float:left; color:#333333; background:#aaaaaa; padding: .45em 1.25em; display:none; border-radius: 4px 4px 0 0; text-shadow: 0 0 3px #ffffff; font-weight:bold; text-decoration:none; box-shadow:0 0 5px #444444;}
+    ul li a:hover { text-decoration:underline;}
+    ul li a.on {background:#ffffff; color:#333333; cursor:default;}
+    ul li a.on:hover { text-decoration:none;}
+    .panel {background:#ffffff; padding: .75em 15px .4em; margin:0 0 .5em; width:570px;}
+    </style>
+</head>
+<body>
+<div class="all">
+    <div class="tabSet">
+        <ul class="tabs">
+            <li><a href="#panel1-1" class="on">panel1</a></li>
+            <li><a href="#panel1-2">panel2</a></li>
+            <li><a href="#panel1-3">panel3</a></li>
+            <li><a href="#panel1-4">panel4</a></li>
+        </ul>
+        <div class="panels">
+            <div class="panel" id="panel1-1">
+            This is panel 1. This is panel 1.  
+            </div>
+            <div class="panel" id="panel1-2">
+            This is panel 2. This is panel 2.
+            </div>
+            <div class="panel" id="panel1-3">
+            This is panel 3. This is panel 3. 
+            </div>
+            <div class="panel" id="panel1-4">
+            This is panel 4. This is panel 4. This is panel 4. This is panel 4. This is panel 4. 
+            </div>
+        </div>
+    </div> <!-- tabSet end -->
+    <div class="tabSet">
+        <ul class="tabs">
+            <li><a href="#panel2-1">panel1</a></li>
+            <li><a href="#panel2-2">panel2</a></li>
+            <li><a href="#panel2-3" class="on">panel3</a></li>
+            <li><a href="#panel2-4">panel4</a></li>
+            <li><a href="#panel2-5">panel4</a></li>
+        </ul>
+        <div class="panels">
+            <div class="panel" id="panel2-1">
+            This is panel 1. This is panel 1. 
+            </div>
+            <div class="panel" id="panel2-2">
+            This is panel 2. This is panel 2. This is panel 2. 
+            </div>
+            <div class="panel" id="panel2-3">
+            This is panel 3. This is panel 3. This is panel 3. This is panel 3. This is panel 3. This is panel 3. This is panel 3. 
+            </div>
+            <div class="panel" id="panel2-4">
+            This is panel 4. This is panel 4. 
+            </div>
+            <div class="panel" id="panel2-5">
+            This is panel 5.
+            </div>
+        </div>
+    </div> <!-- tabSet end -->
+</div>  
+</body>
+</html>

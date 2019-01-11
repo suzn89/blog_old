@@ -1,0 +1,6 @@
+ /* body{ background:#ccc;} */
+ * { margin:0; padding:0; list-style:none}
+ body {background:#222222; color:#ffffff; padding:30px 20px 20px 30px; line-height:1.4;}
+ ul { font-size:3em; font-weight:bold; overflow:hidden;}
+ ul li { float:left; padding:5px 12px; margin:0 10px 10px 0; background:#777777; color:#333333;}
+ .balloon {background:#ffffff; color:#333333; padding:10px; position:absolute; display:none;}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        jQuery(document).ready(function(){
+            $('.rollover').each(function(){
+                var a = $(this);		//메서드 쓸려고 this를 제이쿼리 객체로 만듬
+                var img = a.find('img');	// 하위항목에서 찾음
+                var src_off = img.attr('src')
+                // scr_off = images/menu01_off.png
+                var src_on = src_off.replace('_off','_on');
+                // scr_on = images/menu01_on.png
+                a.hover(
+                    function(){
+                        img.attr('src',src_on);
+                    },
+                    function(){
+                        img.attr('src',src_off);
+                    }
+                );	
+            });	//반복문 (순환) - 1부터 3까지 반복
+        });
+    </script>
+    <style>
+        *{ margin:0; padding:0; border:0; }
+        .header {background:#222222; padding:40px 0 0 42px; border-bottom:8px solid #91b280}
+        .menu {height:38px;}
+        .menu li {list-style:none; float:left; padding:0 0 0 8px;}
+        .menu li a {float:left;}
+        .menu li a img {width:161px; height:38px; border:none;}
+    </style>
+</head>
+<body>
+	<div class="header">
+		<ul class="menu">
+			<li><a href="#" class="rollover"><img src="images/menu01_off.png" alt="Home"/></a></li>
+			<li><a href="#" class="rollover"><img src="images/menu02_off.png" alt="Products"/></a></li>
+			<li><a href="#" class="rollover"><img src="images/menu03_off.png" alt="Company"/></a></li>
+		</ul>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        jQuery(document).ready(function(){
+            var interval = 1000;
+            $('.slideshow').each(function(){
+                var timer;
+                var container = $(this);
+
+                function switchImg(){
+                    var anchors = container.find('a');
+                    var first = anchors.eq(0);
+                    var second = anchors.eq(1);
+                    first.fadeOut().appendTo(container);
+                    second.fadeIn();
+                }		//사용자정의 함수
+                function startTimer(){
+                    timer = setInterval(switchImg,interval);
+                }
+                function stopTimer (){
+                    clearInterval(timer);	//뭘 멈출지 넣어조야지
+                }
+                container.find('a').hover(stopTimer,startTimer);
+                startTimer(interval);
+            });
+        });
+    </script>
+    <style>
+        * {margin:0; padding:0}
+        body {padding:30px;}
+        h1 {padding:0 0 20px;}
+        .slideshow { width:300px; height:300px; margin:0 20px 20px 0; float:left; position:relative; }
+        .slideshow a {position:absolute; top:0; left:0; }
+        .slideshow a img {border:1px solid #000000;}
+        .slideshow a.alt { display:none;}
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+        <a href="#"><img src="images/imgslider1_img/dinner1.jpg" /></a>
+        <a href="#" class="alt" ><img src="images/imgslider1_img/dinner2.jpg"/></a>
+    </div>
+    <div class="slideshow">
+        <a href="#"><img src="images/imgslider1_img/illust1.png" /></a>
+        <a href="#" class="alt"><img src="images/imgslider1_img/illust3.png" /></a>
+    </div>
+    <div class="slideshow">
+        <a href="#" class="alt"><img src="images/imgslider1_img/art1.gif" /></a>
+        <a href="#" class="alt"><img src="images/imgslider1_img/art2.gif" /></a>
+        <a href="#" class="alt"><img src="images/imgslider1_img/art3.gif" /></a>
+        <a href="#" class="alt"><img src="images/imgslider1_img/art4.gif" /></a>
+    </div>	
+</body>
+</html>

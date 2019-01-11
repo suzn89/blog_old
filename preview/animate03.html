@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>document</title>
+	<link rel="stylesheet" href="css/over_anibox3.css"/>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		jQuery(document).ready(function(){
+			$('.banner .gogo1').hover(
+				function(){
+					$('.banner .gogo1>a').stop().animate({'margin-left':'75px'},500);
+				},
+				function(){
+					$('.banner .gogo1>a').stop().animate({'margin-left':'0'},500);		
+				}
+				);
+					$('.banner .gogo2').hover(
+				function(){
+					$('.banner .gogo2>a').stop().animate({'margin-left':'75px'},500);
+				},
+				function(){
+					$('.banner .gogo2>a').stop().animate({'margin-left':'0'},500);		
+				}
+			);
+		});
+	</script>	    
+</head>
+<body>
+<style>
+.banner {width:324px; height:400px; background:url(images/mv_left.jpg) no-repeat; position:relative;}
+.banner .gogo { position:absolute; left:195px; top:70px;}
+.banner .gogo .gogo1 { overflow:hidden; width:75px; height:75px;}
+.banner .gogo .gogo1 > a { display:block; position:relative; width:75px; height:75px; background:url(images/img_off_01.jpg) no-repeat;}
+.banner .gogo .gogo1 > a > img {position:absolute; left:-75px;}
+.banner .gogo .gogo2 { overflow:hidden; width:75px; height:75px; margin-top:128px;}
+.banner .gogo .gogo2 > a { display:block; position:relative; width:75px; height:75px; background:url(images/img_off_02.jpg) no-repeat;}
+.banner .gogo .gogo2 > a > img {position:absolute; left:-75px;}
+</style>	
+
+<div class="banner">
+	<ul class="gogo">
+		<li class="gogo1"><a href="#"><img src="images/img_on_01.jpg" alt="강당바로가기"/></a></li>
+		<li class="gogo2"><a href="#"><img src="images/img_on_02.jpg" alt="교실바로가기"/></a></li>
+	</ul>
+</div>
+
+</body>
+</html>
